@@ -1,2 +1,2 @@
 # JaclynCoate.github.io
-Website to Display MSDS: DS-6306
+Website to display my personal projects and anlyses. Enjoy!
