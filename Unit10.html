@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jaclyn Ann Coate" />
+  <meta name="dcterms.date" content="2019-11-12" />
+  <title>Unit 10 Live Assignment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Unit 10 Live Assignment</h1>
+    <h2 class="author">Jaclyn Ann Coate</h2>
+    <h3 class="date">2019-11-12</h3>
+</section>
+
+<section><section id="cars-fit-model-hypothesis-test-relationship-description" class="title-slide slide level1"><h1>(1) Cars: Fit model, hypothesis test, &amp; relationship description</h1></section><section id="a-fit-the-model-mpg-b_0-b_1-weight-e" class="slide level2">
+<h2>(1a) Fit the model: MPG = B_0 + B_1 * Weight + E</h2>
+<ul>
+<li>Model: mpg = 46.27 + Weight * -.00766
+<ul>
+<li>Scatterplot</li>
+</ul></li>
+</ul>
+<p><img data-src="Unit10_files/figure-revealjs/1a%20scatterplot-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li>Model: mpg = 46.27 + Weight * -.00766
+<ul>
+<li>Scatterplot with linear model</li>
+</ul></li>
+</ul>
+<p><img data-src="Unit10_files/figure-revealjs/1a%20residual%20model-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li>Model: mpg = 46.27 + Weight * -.00766
+<ul>
+<li>Confidence and Prediction Intervals</li>
+</ul></li>
+</ul>
+<p><img data-src="Unit10_files/figure-revealjs/CI%20and%20PI%20Graph-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li>Model: mpg = 46.27 + Weight * -.00766
+<ul>
+<li>Code Output</li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = MPG ~ Weight, data = MPGweight)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.0008  -2.7684  -0.3342   2.1245  16.4920 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 46.2734424  0.7974987   58.02   &lt;2e-16 ***
+## Weight      -0.0076613  0.0002577  -29.73   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.332 on 392 degrees of freedom
+## Multiple R-squared:  0.6927, Adjusted R-squared:  0.6919 
+## F-statistic: 883.6 on 1 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## (Intercept) 
+##    46.27344</code></pre>
+<pre><code>##       Weight 
+## -0.007661335</code></pre>
+</section><section id="b-6-step-hypothesis-test-of-slope-beta_1" class="slide level2">
+<h2>(1b) 6 Step Hypothesis Test of Slope (Beta_1)</h2>
+<ul>
+<li>Conduct a 6-step hypothesis test of the slope.
+<ul>
+<li><font size="5">That is, test the claim that the slope is significantly different from zero. Show all 6 steps and quantify your uncertainty by including a 95% confidence interval for the slope.</font>
+<ol start="0" type="1">
+<li><font size="5"> Assumptions Met: (a) Subpopulations of MPGs for a fixed weight are normally distributed. (b) Means of the distributions of MPGs for a fixed weight are linearly related to weight.</font></li>
+<li><font size="5">H<sub>o</sub> : beta_1 = 0; H<sub>a</sub> : beta_1 does not = 0</font></li>
+<li><font size="5">Critical Value = 1.966</font></li>
+<li><font size="5">T<sub>statistic</sub> = -29.73</font></li>
+<li><font size="5">p-value &lt; 0.0001</font></li>
+<li><font size="5">Reject the H<sub>o</sub></font></li>
+<li><font size="5">Conclusion: There is overwhelming evidence at the alpha = 0.05 level of significance (p-value &lt; 0.0001) to suggest that the data are linearly correlated or that the slope is nonzero. Our best estimate is 47.3 and we have 95% confidence that the intercept falls between [44.71 47.84].</font></li>
+</ol></li>
+</ul></li>
+</ul>
+</section><section id="hypothesis-test-code-output" class="slide level2">
+<h2>Hypothesis test code output</h2>
+<pre><code>## [1] -1.966034</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = MPG ~ Weight, data = MPGweight)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.0008  -2.7684  -0.3342   2.1245  16.4920 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 46.2734424  0.7974987   58.02   &lt;2e-16 ***
+## Weight      -0.0076613  0.0002577  -29.73   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.332 on 392 degrees of freedom
+## Multiple R-squared:  0.6927, Adjusted R-squared:  0.6919 
+## F-statistic: 883.6 on 1 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>##                    2.5 %       97.5 %
+## (Intercept) 44.705532760 47.841351974
+## Weight      -0.008168061 -0.007154609</code></pre>
+</section><section id="c-describe-the-relationship-between-mpg-and-weight" class="slide level2">
+<h2>(1c) Describe the relationship between MPG and Weight</h2>
+<ul>
+<li>Describe the relationship between miles per gallon and the weight of the car
+<ul>
+<li>Interpret the slope parameter.</li>
+<li>Include a 95% confidence interval in your interpretation.</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<h4 id="with-the-slope-at--0.00766-we-can-confirm-that-mpg-and-weight-have-a-negative-linear-relationship.-it-is-estimated-that-for-every-increase-in-1000-lb-in-weight-the-estimated-mpg-will-decrease-.00766-in-mpg.-we-are-95-confident-that-this-decrease-will-be-between-.00817-and-.00715-miles-per-gallon.">With the slope at -0.00766 we can confirm that MPG and Weight have a negative linear relationship. It is estimated that for every increase in 1,000 lb in weight, the estimated MPG will decrease .00766 in MPG. We are 95% confident that this decrease will be between .00817 and .00715 miles per gallon.</h4>
+</section></section>
+<section><section id="cars-conduct-an-internal-n-fold-leave-one-out-cross-validation-of-the-following-slr-models" class="title-slide slide level1"><h1>(2) Cars: Conduct an internal n-fold (leave one out) cross validation of the following SLR models</h1></section><section id="a-model-1-mpg-b_0-b_1-weight-e" class="slide level2">
+<h2>(2a) Model 1: MPG = B_0 + B_1 * Weight + E</h2>
+<ul>
+<li>MSPE Model 1 = 15.00668</li>
+</ul>
+<pre><code>## Observations: 394
+## Variables: 2
+## $ Weight &lt;dbl&gt; 3504, 3693, 3436, 3433, 3449, 4341, 4354, 4312, 4425, 385…
+## $ MPG    &lt;dbl&gt; 18, 15, 18, 16, 17, 15, 14, 14, 14, 15, 15, 14, 15, 14, 2…</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = MPG ~ Weight, data = MPGTrain)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -11.8778  -2.8326  -0.2011   2.1961  16.6167 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 45.883464   0.949798   48.31   &lt;2e-16 ***
+## Weight      -0.007536   0.000310  -24.31   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.476 on 294 degrees of freedom
+## Multiple R-squared:  0.6678, Adjusted R-squared:  0.6667 
+## F-statistic: 591.1 on 1 and 294 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 15.00668</code></pre>
+</section><section id="b-model-2-mpg-b_0-b_1-weight-b_2-weight-2-e" class="slide level2">
+<h2>(2b) Model 2: MPG = B_0 + B_1 * Weight + B_2 * Weight ^2 + E</h2>
+<ul>
+<li>MSPE Model 2 = 14.07949</li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = MPG ~ Weight + WeightSqr, data = MPGTrain)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.5733  -2.7874  -0.4291   1.8208  16.1065 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  6.232e+01  3.478e+00  17.920  &lt; 2e-16 ***
+## Weight      -1.861e-02  2.281e-03  -8.160 9.95e-15 ***
+## WeightSqr    1.727e-06  3.524e-07   4.899 1.60e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.311 on 293 degrees of freedom
+## Multiple R-squared:  0.693,  Adjusted R-squared:  0.6909 
+## F-statistic: 330.7 on 2 and 293 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 14.07949</code></pre>
+</section><section id="c-which-model-is-favored-by-this-cross-validation" class="slide level2">
+<h2>(2c) Which model is favored by this cross validation?</h2>
+<ul>
+<li>MSPE Model 1: 15.01 &gt; MSPE Model 2: 14.08
+<ul>
+<li>Therefore we favor Model 2 (the smaller MSPE the better)</li>
+</ul></li>
+</ul>
+</section><section id="d-describe-the-relationship-between-miles-per-gallon-and-the-weight-of-the-car-if-it-has-changed-again-making-sure-to-quantify-any-uncertainty-you-may-have." class="slide level2">
+<h2>(2d) Describe the relationship between miles per gallon and the weight of the car (if it has changed) (again making sure to quantify any uncertainty you may have.)</h2>
+</section><section class="slide level2">
+
+<h3 id="there-is-overwhelmng-evidence-at-the-alph-0.05-level-that-there-is-a-non-zero-slope-in-the-relationship-between-mpg-and-weight-of-cars-p-value-.0001.-this-has-not-changed-from-our-previous-conclusion-in-problem-1.">There is overwhelmng evidence at the alph = 0.05 level that there is a non zero slope in the relationship between MPG and Weight of cars (p-value &lt; .0001). This has not changed from our previous conclusion in problem 1.</h3>
+</section><section id="e-use-the-favored-model-to-estimate-the-mean-mpg-of-cars-that-weigh-2000-lbs." class="slide level2">
+<h2>(2e) Use the favored model to estimate the mean mpg of cars that weigh 2000 lbs.</h2>
+<ul>
+<li>The estimated mean MPG of cars that weigh 2000 lbs is 31.999, we have a confidence interval of the MPG falling between between 31.12 and 32.88.</li>
+</ul>
+<pre><code>##       fit      lwr      upr
+## 1 31.9986 31.11546 32.88174</code></pre>
+</section></section>
+<section><section id="cars-we-would-like-to-assess-the-relationship-interpret-slope-parameter-between-mpg-and-horsepower.-notice-that-some-of-the-horsepowers-are-missing." class="title-slide slide level1"><h1>(3) Cars: We would like to assess the relationship (interpret slope parameter) between mpg and horsepower. Notice that some of the horsepowers are missing.</h1></section><section id="a-impute-predict-and-insert-the-missing-horsepowers-by-fitting-a-regression-model." class="slide level2">
+<h2>(3a) Impute (predict and insert) the missing horsepowers by fitting a regression model.</h2>
+<ul>
+<li>You may use any of the variables as regressors EXCEPT for mps (since we will later be using horsepower to predict mpg).</li>
+</ul>
+<p><img data-src="Unit10_files/figure-revealjs/Visual%20of%20Missing%20Data-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li>Model 3.1: Horsepower = B_0 + B_1 * Acceleration + E
+<ul>
+<li>Model 3.1 MSPE = 684.3713</li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = Horsepower ~ Acceleration, data = Train3)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -66.98 -18.09  -3.19  18.63 117.79 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  259.5183     9.9413   26.11   &lt;2e-16 ***
+## Acceleration  -9.9625     0.6334  -15.73   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 28.52 on 292 degrees of freedom
+## Multiple R-squared:  0.4587, Adjusted R-squared:  0.4568 
+## F-statistic: 247.4 on 1 and 292 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 684.3713</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Model 3.2: Horsepower = B_0 + B_1 * Acceleration + B_2 * Cylinders + E
+<ul>
+<li>Model 3.2 MSPE = 263.3736</li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = Horsepower ~ Acceleration + Cylinders, data = Train3)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -33.318 -12.949  -1.698   9.702  64.922 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  103.1348     9.3204   11.07   &lt;2e-16 ***
+## Acceleration  -5.2677     0.4416  -11.93   &lt;2e-16 ***
+## Cylinders     15.2995     0.6912   22.14   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 17.44 on 291 degrees of freedom
+## Multiple R-squared:  0.7983, Adjusted R-squared:  0.7969 
+## F-statistic: 575.8 on 2 and 291 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 263.3736</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Model 3.3: Horsepower = B_0 + B_1 * Acceleration + B_2 * Cylinders + B_3 * Displacement + E
+<ul>
+<li>Model 3.3 MSPE = 159.4105</li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = Horsepower ~ Acceleration + Cylinders + Displacement, 
+##     data = Train3)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -36.701  -8.751  -1.018   7.995  71.384 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  118.98969    8.07814  14.730   &lt;2e-16 ***
+## Acceleration  -4.18298    0.38983 -10.730   &lt;2e-16 ***
+## Cylinders     -0.97746    1.65151  -0.592    0.554    
+## Displacement   0.28892    0.02739  10.549   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.85 on 290 degrees of freedom
+## Multiple R-squared:  0.8542, Adjusted R-squared:  0.8527 
+## F-statistic: 566.5 on 3 and 290 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 159.4105</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Model 3.4: Horsepower = B_0 + B_1 * Acceleration + B_2 * Displacement + E
+<ul>
+<li>Model 3.4 MSPE = 161.1448</li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = Horsepower ~ Acceleration + Displacement, data = Train3)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -36.407  -8.812  -0.993   7.660  70.617 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  116.889358   7.248827   16.12   &lt;2e-16 ***
+## Acceleration  -4.201745   0.388107  -10.83   &lt;2e-16 ***
+## Displacement   0.273771   0.009751   28.08   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.83 on 291 degrees of freedom
+## Multiple R-squared:  0.854,  Adjusted R-squared:  0.853 
+## F-statistic: 851.4 on 2 and 291 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>## [1] 161.1448</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Using Model 3.3: based on the lowest MSPE to find NAs in Horsepower</li>
+</ul>
+<pre><code>## Observations: 2
+## Variables: 9
+## $ Model        &lt;chr&gt; &quot;renault 18i&quot;, &quot;amc concord dl&quot;
+## $ MPG          &lt;dbl&gt; 34.5, 23.0
+## $ Cylinders    &lt;dbl&gt; 4, 4
+## $ Displacement &lt;dbl&gt; 100, 151
+## $ Horsepower   &lt;dbl&gt; NA, NA
+## $ Weight       &lt;dbl&gt; 2320, 3035
+## $ Acceleration &lt;dbl&gt; 15.8, 20.5
+## $ Year         &lt;dbl&gt; 81, 82
+## $ Origin       &lt;chr&gt; &quot;Europe&quot;, &quot;US&quot;</code></pre>
+<pre><code>##        fit      lwr      upr
+## 1 77.88043 75.46348 80.29739</code></pre>
+<pre><code>##        fit      lwr     upr
+## 1 72.95519 68.14317 77.7672</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>Inserted predicted values and check that NAs in Horspower are gone in completely merged data set</li>
+</ul>
+<pre><code>##            Model  MPG Cylinders Displacement Horsepower Weight
+## 1    renault 18i 34.5         4          100   77.88043   2320
+## 2 amc concord dl 23.0         4          151   72.95519   3035
+##   Acceleration Year Origin
+## 1         15.8   81 Europe
+## 2         20.5   82     US</code></pre>
+<pre><code>##  /\     /\
+## {  `---&#39;  }
+## {  O   O  }
+## ==&gt;  V &lt;==  No need for mice. This data set is completely observed.
+##  \  \|/  /
+##   `-----&#39;</code></pre>
+<p><img data-src="Unit10_files/figure-revealjs/Inserting%20Missing%20Horsepower%20values,%20check%20insert-1.png" /></p>
+<pre><code>##     Model MPG Cylinders Displacement Horsepower Weight Acceleration Year
+## 394     1   1         1            1          1      1            1    1
+##         0   0         0            0          0      0            0    0
+##     Origin  
+## 394      1 0
+##          0 0</code></pre>
+</section><section id="b-assess-the-relationship-between-the-mpg-and-the-slope.-make-sure-and-include-estimates-of-your-uncertainty-ie.-confidence-intervals." class="slide level2">
+<h2>(3b) Assess the relationship between the mpg and the slope. Make sure and include estimates of your uncertainty (ie. Confidence intervals).</h2>
+</section><section class="slide level2">
+
+<ul>
+<li>MPG Model: mpg = B_0 + B_1 * Horsepower
+<ul>
+<li><font size="5">With the slope at -.1579 we can confirm that MPG and Horsepower have a negative linear relationship. It is estimated that for every single unit increase in Horsepower, the estimated MPG will decrease .1579 in fuel efficiency. We are 95% confident that this decrease will happen between .171 and .145 miles per gallon.</font></li>
+</ul></li>
+</ul>
+<pre><code>## 
+## Call:
+## lm(formula = MPG ~ Horsepower, data = cars.hp)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -13.5753  -3.2619  -0.3473   2.7642  16.9196 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 39.941536   0.716541   55.74   &lt;2e-16 ***
+## Horsepower  -0.157864   0.006446  -24.49   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.913 on 392 degrees of freedom
+## Multiple R-squared:  0.6048, Adjusted R-squared:  0.6038 
+## F-statistic: 599.8 on 1 and 392 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre><code>##                  2.5 %     97.5 %
+## (Intercept) 38.5327930 41.3502800
+## Horsepower  -0.1705367 -0.1451916</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li>MPG Model: mpg = B_0 + B_1 * Horsepower
+<ul>
+<li>Scatterplot and linear model fit line</li>
+</ul></li>
+</ul>
+<p><img data-src="Unit10_files/figure-revealjs/unnamed-chunk-1-1.png" /></p>
+</section><section id="c-use-your-model-and-imputed-data-to-estimate-the-mean-mpg-for-a-car-with-250-horsepower." class="slide level2">
+<h2>(3c) Use your model and imputed data to estimate the mean mpg for a car with 250 horsepower.</h2>
+<ul>
+<li>With our current model: mpg = 39.941536 + -0.157864 * Horsepower we would predict a MPG of -0.157864 at the Horsepower of 250. We are 95% confidence that if a car with 250 Horsepower was found it would have an MPG that fell between -1.4 and 2.38 miles per gallow.
+<ul>
+<li><font size="5">Upon looking at the scatter plot on the previous slide this MPG would make sense for the linear model. However, it is clear that this is not entirely a linear relationship. As you follow the data it begins to curve up as the x value continues to increase. In this caes I would recommend log transformation to further analyze this data and obtain the right model to fit this data (which does not seem to be linear at this time).</font></li>
+</ul></li>
+</ul>
+<pre><code>##         fit       lwr      upr
+## 1 0.4754919 -1.433681 2.384665</code></pre>
+</section></section>
+    </div>
+  </div>
+
+  <script src="site_libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="site_libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        chalkboard: {
+          toggleNotesButton: false,
+          theme: 'whiteboard',
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'site_libs/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
