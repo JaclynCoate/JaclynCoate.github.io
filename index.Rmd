@@ -1,9 +1,0 @@
----
-title: "Index"
-author: "Jaclyn Ann Coate"
-date: "11/12/2019"
-output: html_document
----
-
-# Jaclyn Ann Coate
-## A website to display my work and analyses. Enjoy!
