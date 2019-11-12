@@ -6,5 +6,5 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - test: "Unit 12"
-      href: Unit12_Assign.html
+    - text: "About"
+      href: about.html
