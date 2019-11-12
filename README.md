@@ -47,13 +47,13 @@ body {font-family: Arial;}
 </head>
 <body>
 
-#<h2>Tabs</h2>
-#<p>Click on the buttons inside the tabbed menu:</p>
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
 
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'About Me')">About Me</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openCity(event, 'DS 6306: Case Study 1')">DS 6306: Case Study 1</button>
+  <button class="tablinks" onclick="openCity(event, 'DS 63036: Final Project')">DS 63036: Final Project</button>
 </div>
 
 <div id="About Me" class="tabcontent">
@@ -61,14 +61,14 @@ body {font-family: Arial;}
   <p>About Me Information.</p>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+<div id="DS 6306: Case Study 1" class="tabcontent">
+  <h3>DS 6306: Case Study 1</h3>
+  <p>DS 6306: Case Study 1 work</p> 
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="DS 63036: Final Project" class="tabcontent">
+  <h3>DS 63036: Final Project</h3>
+  <p>DS 63036: Final Project</p>
 </div>
 
 <script>
