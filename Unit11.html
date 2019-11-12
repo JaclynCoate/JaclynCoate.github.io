@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jaclyn Ann Coate" />
+  <meta name="dcterms.date" content="2019-11-12" />
+  <title>Unit 11 Live Assignment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="site_libs/reveal.js-3.3.0.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Unit 11 Live Assignment</h1>
+    <h2 class="author">Jaclyn Ann Coate</h2>
+    <h3 class="date">2019-11-12</h3>
+</section>
+
+<section><section id="activity-one-ses" class="title-slide slide level1"><h1>Activity One: SES</h1></section><section class="slide level2">
+
+<h4 id="ses-model-ausair-plot">SES Model: AUSAir PLOT</h4>
+<p><img data-src="Unit11_files/figure-revealjs/%3CSES%20Model:%20AUSAir%20PLOT%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<h4 id="ses-model-fit-3-different-simple-exponential-smoothing-models.">SES Model: Fit 3 different simple exponential smoothing models.</h4>
+<ul>
+<li><font size="5">They are different in their smoothing parameters “alpha”.</li>
+<li>The “h” parameter is the number of periods for forecasting</font></li>
+</ul>
+<pre><code>##                     ME      RMSE       MAE      MPE     MAPE     MASE
+## Training set  5.864549  6.301705  5.864549 18.74164 18.74164 3.199632
+## Test set     11.632265 11.751057 11.632265 24.77018 24.77018 6.346433
+##                      ACF1 Theil&#39;s U
+## Training set  0.405609699        NA
+## Test set     -0.003569265  6.140567</code></pre>
+<pre><code>##                    ME     RMSE      MAE       MPE      MAPE     MASE
+## Training set 2.576335 3.101549 2.582686  8.507273  8.528313 1.409084
+## Test set     6.038897 6.264665 6.038897 12.797965 12.797965 3.294755
+##                      ACF1 Theil&#39;s U
+## Training set  0.206215181        NA
+## Test set     -0.003569265  3.443693</code></pre>
+<pre><code>##                    ME     RMSE      MAE       MPE      MAPE      MASE
+## Training set 1.602998 2.290962 1.710834  5.406487  5.766099 0.9334119
+## Test set     5.182781 5.444168 5.182781 10.965507 10.965507 2.8276672
+##                      ACF1 Theil&#39;s U
+## Training set -0.085328673        NA
+## Test set     -0.003569265  3.032778</code></pre>
+</section><section class="slide level2">
+
+<h4 id="reset-plot-with-estimated-values-from-the-three-fit-models">Reset plot with estimated values from the three fit models</h4>
+<ul>
+<li><font size="5">Actual values plotted</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CSES%20Model:%20Fit%20Plot%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">The colored lines are the 3 different fit models created</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CSES%20Model:%20Three%20fit%20models%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">The continued lines after the break are the $mean values and are forecasts</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CSES%20Model:%20Three%20fit%20models%20forecasts%20with%20$mean%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">The final black line added (to the right of the break) consists of the actual values compared to the forcasted</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CSES%20Model:%20Actual%20Value%20v%20Forecasted%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<h4 id="ses-model-forcasts-v-actual">SES Model: Forcasts v Actual</h4>
+<pre><code>##                     ME      RMSE       MAE      MPE     MAPE     MASE
+## Training set  5.864549  6.301705  5.864549 18.74164 18.74164 3.199632
+## Test set     11.632265 11.751057 11.632265 24.77018 24.77018 6.346433
+##                      ACF1 Theil&#39;s U
+## Training set  0.405609699        NA
+## Test set     -0.003569265  6.140567</code></pre>
+<pre><code>##                    ME     RMSE      MAE       MPE      MAPE     MASE
+## Training set 2.576335 3.101549 2.582686  8.507273  8.528313 1.409084
+## Test set     6.038897 6.264665 6.038897 12.797965 12.797965 3.294755
+##                      ACF1 Theil&#39;s U
+## Training set  0.206215181        NA
+## Test set     -0.003569265  3.443693</code></pre>
+<pre><code>##                    ME     RMSE      MAE       MPE      MAPE      MASE
+## Training set 1.602998 2.290962 1.710834  5.406487  5.766099 0.9334119
+## Test set     5.182781 5.444168 5.182781 10.965507 10.965507 2.8276672
+##                      ACF1 Theil&#39;s U
+## Training set -0.085328673        NA
+## Test set     -0.003569265  3.032778</code></pre>
+</section></section>
+<section><section id="activity-two-holts-linear" class="title-slide slide level1"><h1>Activity Two: Holt’s Linear</h1></section><section class="slide level2">
+
+<h4 id="holts-linear-trend-model-for-ausair">Holt’s Linear Trend Model for AUSAir</h4>
+<ul>
+<li><font size="5">Holt’s model</li>
+<li>Estimated Value of the “training” data</li>
+<li>Forecast value “h” of them</font></li>
+</ul>
+<pre><code>## Time Series:
+## Start = 1990 
+## End = 2004 
+## Frequency = 1 
+##  [1] 21.86010 22.03237 25.48462 27.54059 30.28813 30.26106 31.58122
+##  [8] 32.59923 33.24224 32.26755 33.07776 33.95807 34.77708 40.05535
+## [15] 43.21586</code></pre>
+<pre><code>## Time Series:
+## Start = 2005 
+## End = 2009 
+## Frequency = 1 
+## [1] 43.75697 45.59352 47.43008 49.26663 51.10319</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of actual</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20actual%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 1</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%201%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 1 &amp; 2</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%201%20&amp;%202%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 1 w/ forecast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%201%20w/%20Forecast%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 1 &amp; 2 w/ forecast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%201%20&amp;%202%20w/%20Forecast%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 3 w/ forcast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%203%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holts Model: plot of fit 3 &amp; 4 w/ forecast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%203%20&amp;%204%20w/%20forecast%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Hotl’s Model: Implicit Test Sets</font></li>
+</ul>
+<pre><code>##                      ME     RMSE      MAE       MPE     MAPE      MASE
+## Training set -1.0292272 2.202869 1.772637 -4.485612 6.364749 0.9671310
+## Test set      0.9405879 1.444776 1.371076  1.947628 2.808140 0.7480438
+##                    ACF1 Theil&#39;s U
+## Training set  0.2088940        NA
+## Test set     -0.3313068 0.7212626</code></pre>
+<pre><code>##                     ME     RMSE      MAE       MPE     MAPE     MASE
+## Training set -2.010092 2.908422 2.565680 -7.724285 9.137707 1.399806
+## Test set     -1.836519 2.883708 1.859959 -3.672580 3.725068 1.014773
+##                   ACF1 Theil&#39;s U
+## Training set 0.3109081        NA
+## Test set     0.1029680  1.403487</code></pre>
+<pre><code>##                     ME     RMSE      MAE       MPE     MAPE     MASE
+## Training set 0.3317307 1.653933 1.084962 0.7156323 3.371681 0.591943
+## Test set     3.8715783 4.131618 3.871578 7.8802382 7.880238 2.112290
+##                   ACF1 Theil&#39;s U
+## Training set 0.1675855        NA
+## Test set     0.2453622  2.086233</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Hotl’s Model: Explicit Test Sets</font></li>
+</ul>
+<pre><code>##                      ME     RMSE      MAE       MPE     MAPE      MASE
+## Training set -1.0292272 2.202869 1.772637 -4.485612 6.364749 0.9671310
+## Test set      0.9405879 1.444776 1.371076  1.947628 2.808140 0.7480438
+##                    ACF1 Theil&#39;s U
+## Training set  0.2088940        NA
+## Test set     -0.3313068 0.7212626</code></pre>
+<pre><code>##                     ME     RMSE      MAE       MPE     MAPE     MASE
+## Training set -2.010092 2.908422 2.565680 -7.724285 9.137707 1.399806
+## Test set     -1.836519 2.883708 1.859959 -3.672580 3.725068 1.014773
+##                   ACF1 Theil&#39;s U
+## Training set 0.3109081        NA
+## Test set     0.1029680  1.403487</code></pre>
+<pre><code>##                     ME     RMSE      MAE       MPE     MAPE     MASE
+## Training set 0.3317307 1.653933 1.084962 0.7156323 3.371681 0.591943
+## Test set     3.8715783 4.131618 3.871578 7.8802382 7.880238 2.112290
+##                   ACF1 Theil&#39;s U
+## Training set 0.1675855        NA
+## Test set     0.2453622  2.086233</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt’s Model: plot of fit 3 &amp; 4 w/ forecast and actual</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolts%20Model:%20Plot%20of%20Fit%203%20&amp;%204%20w/%20Forecaste%20and%20Actual%3E-1.png" /></p>
+</section></section>
+<section><section id="activity-three-holt-seasonal" class="title-slide slide level1"><h1>Activity Three: Holt Seasonal</h1></section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: Seasonal Trend Graphed</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolt%20Seasonal:%20Seasonal%20Trend%20Graphed%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: Season Trend of fit 1 &amp; 2</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolt%20Seasonal%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: Season Trend of fit 1 &amp; 2 w/ fit 1 forcast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolt%20Seasonal:%20Fit%201%20&amp;%202%20w/%201%20forcast%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: Season Trend of fit 1 &amp; 2 w/ forcasts</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolt%20Seasonal:%20Fit%201%20&amp;%202%20w/%20forcasts%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: compare the accuracy</font></li>
+</ul>
+<pre><code>##                      ME     RMSE      MAE        MPE      MAPE      MASE
+## Training set -0.4377946 2.266717 1.882623  -1.842903  6.492401 0.6090876
+## Test set     -5.0401911 6.019319 5.172738 -14.174410 14.398562 1.6735428
+##                     ACF1 Theil&#39;s U
+## Training set -0.04231276        NA
+## Test set     -0.13264014 0.5996539</code></pre>
+<pre><code>##                      ME     RMSE      MAE        MPE     MAPE      MASE
+## Training set 0.07223675 2.180841 1.626375 -0.1303281 5.531772 0.5261833
+## Test set     0.88033413 2.627779 1.933411  1.3152869 4.865291 0.6255191
+##                    ACF1 Theil&#39;s U
+## Training set 0.09930429        NA
+## Test set     0.26125025 0.2670124</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Holt Seasonal: Season Trend of fit 1 &amp; 2 w/ forcasts and actual</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CHolt%20Seasonal:%20Season%20Trend%20of%20fit%201%20&amp;%202%20w/%20forcasts%20and%20actual%3E-1.png" /></p>
+</section></section>
+<section><section id="activity-four-full-analysis" class="title-slide slide level1"><h1>Activity Four: Full Analysis</h1></section><section id="temperature-data-using-the-maxtemp-dataset-granted-by-loading-the-fpp2-package-there-are-maximum-annual-temperature-data-in-celsius.-for-more-information-use-helpmaxtemp.-to-see-what-youre-looking-at-execute-the-command-in-examples-in-the-help-document." class="slide level2">
+<h2>Temperature Data Using the maxtemp dataset granted by loading the fpp2 package, there are maximum annual temperature data in Celsius. For more information, use help(maxtemp). To see what you’re looking at, execute the command in ‘Examples’ in the help document.</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Example Command</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CActivity%20Four:%20Example%20Command%3E-1.png" /></p>
+</section><section id="we-are-only-concerned-with-information-after-1990.-please-eliminate-unwanted-information-or-subset-information-we-dont-care-about." class="slide level2">
+<h2>We are only concerned with information after 1990. Please eliminate unwanted information or subset information we don’t care about.</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Subset data set to exclude anything before 1990</font></li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">str</span>(maxtemp)</a></code></pre></div>
+<pre><code>##  Time-Series [1:46] from 1971 to 2016: 34.6 39.3 40.5 36.8 39.7 40.5 41.5 38.2 41.4 41.5 ...
+##  - attr(*, &quot;names&quot;)= chr [1:46] &quot;1971&quot; &quot;1972&quot; &quot;1973&quot; &quot;1974&quot; ...</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co">#view(maxtemp)</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="co">#?window</span></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">temps =<span class="st"> </span><span class="kw">window</span>(maxtemp, <span class="dt">start =</span> <span class="dv">1990</span>, <span class="dt">end =</span> <span class="dv">2016</span>)</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">temps</a></code></pre></div>
+<pre><code>## Time Series:
+## Start = 1990 
+## End = 2016 
+## Frequency = 1 
+## 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 
+## 39.0 41.3 38.7 37.8 38.9 39.7 36.1 41.3 40.6 37.5 39.6 38.8 36.6 44.3 39.7 
+## 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 
+## 43.0 43.1 41.5 40.5 46.7 43.9 39.5 39.7 41.5 43.7 42.7 42.9</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">view</span>(temps)</a></code></pre></div>
+</section><section id="utilize-ses-to-predict-the-next-five-years-of-maximum-temperatures-in-melbourne.-plot-this-information-including-the-prior-information-and-the-forecast.-add-the-predicted-value-line-across-1990-present-as-a-separate-line-preferably-blue.-so-to-review-you-should-have-your-fit-the-predicted-value-line-overlaying-it-and-a-forecast-through-2021-all-on-one-axis.-find-the-aicc-and-bic-of-this-fitted-model.-you-will-use-that-information-later." class="slide level2">
+<h2>Utilize SES to predict the next five years of maximum temperatures in Melbourne. Plot this information, including the prior information and the forecast. Add the predicted value line across 1990-present as a separate line, preferably blue. So, to review, you should have your fit, the predicted value line overlaying it, and a forecast through 2021, all on one axis. Find the AICc and BIC of this fitted model. You will use that information later.</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Plot the data</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CActivity%20Four:%20plot%20the%20data%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Created 3 SES fit models</font></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">fit1temp =<span class="st"> </span><span class="kw">ses</span>(temps, <span class="dt">initial =</span> <span class="st">&quot;simple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.2</span>, <span class="dt">h =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">fit2temp =<span class="st"> </span><span class="kw">ses</span>(temps, <span class="dt">initial =</span> <span class="st">&quot;simple&quot;</span>, <span class="dt">alpha =</span> <span class="fl">.6</span>, <span class="dt">h =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">fit3temp =<span class="st"> </span><span class="kw">ses</span>(temps, <span class="dt">h =</span> <span class="dv">5</span>)</a></code></pre></div>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Plotted the 3 SES fit mmodels</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CActivity%20Four:%20Plotted%20the%203%20SES%20fit%20mmodels%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Accuracy of fit check</font>
+<ul>
+<li><font size="5">Using the lowest MAPE, MASE we are able to determine that fit3temp is the best model</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">accuracy</span>(fit1temp)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE     MPE     MAPE      MASE
+## Training set 0.5967905 2.326389 1.760939 1.18444 4.253067 0.7325506
+##                     ACF1
+## Training set -0.09325844</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">accuracy</span>(fit2temp)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE      MPE     MAPE      MASE
+## Training set 0.2351853 2.561856 1.961616 0.303926 4.784017 0.8160323
+##                    ACF1
+## Training set -0.2849734</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">accuracy</span>(fit3temp)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE      MPE     MAPE      MASE
+## Training set 0.5018493 2.322345 1.776513 0.947593 4.301593 0.7390293
+##                     ACF1
+## Training set -0.09460844</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Reduced to best (2) SES fit model</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CActivity%20Four:%20Reduced%20to%20best%20(2)%20SES%20fit%20model%3E-1.png" /></p>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: SES fit model w/ forcast through 2021</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/%3CActivity%20Four:%20fit%20model%20w/%20forcast%20through%202021%3E-1.png" /></p>
+</section><section id="now-use-a-damped-holts-linear-trend-to-also-predict-out-five-years.-make-sure-initialoptimal.-as-above-create-a-similar-plot-to-1c-but-use-the-holt-fit-instead." class="slide level2">
+<h2>Now use a damped Holt’s linear trend to also predict out five years. Make sure initial=“optimal.” As above, create a similar plot to 1C, but use the Holt fit instead.</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: created Holt’s fit model and accuracy check</font></li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">fit1temph =<span class="st"> </span><span class="kw">holt</span>(temps, <span class="dt">alpha =</span> <span class="fl">.8</span>, <span class="dt">beta =</span> <span class="fl">.2</span>, <span class="dt">initial =</span> <span class="st">&quot;optimal&quot;</span>, <span class="dt">h =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co"># Estiamted values of the &quot;training&quot; data from the first holt model </span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw">fitted</span>(fit1temph)</a></code></pre></div>
+<pre><code>## Time Series:
+## Start = 1990 
+## End = 2016 
+## Frequency = 1 
+##  [1] 39.44256 38.95602 41.16751 39.03630 37.64280 38.49554 39.54698
+##  [8] 36.18787 40.69848 41.02090 37.90121 39.29703 38.83678 36.53738
+## [15] 43.79002 40.74255 43.22454 43.77603 42.15112 40.69592 46.56569
+## [22] 44.96651 40.03337 39.14007 40.87339 43.54538 43.11070</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">accuracy</span>(fit1temph)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE        MPE     MAPE      MASE
+## Training set 0.0450865 3.057281 2.386562 -0.1605611 5.819333 0.9928097
+##                    ACF1
+## Training set -0.3645378</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: Actual plotted w/ Holt’s model and 5 year forcast</font></li>
+</ul>
+<p><img data-src="Unit11_files/figure-revealjs/unnamed-chunk-1-1.png" /></p>
+</section><section id="compare-the-aicc-and-bic-of-the-ses-and-holt-models.-which-model-is-better-here" class="slide level2">
+<h2>Compare the AICc and BIC of the ses() and holt() models. Which model is better here?</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: AICc: SES</font>
+<ul>
+<li><font size="5">Our SES model currently has an AICc of 141.5302</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">summary</span>(fit3temp)</a></code></pre></div>
+<pre><code>## 
+## Forecast method: Simple exponential smoothing
+## 
+## Model Information:
+## Simple exponential smoothing 
+## 
+## Call:
+##  ses(y = temps, h = 5) 
+## 
+##   Smoothing parameters:
+##     alpha = 0.2164 
+## 
+##   Initial states:
+##     l = 39.345 
+## 
+##   sigma:  2.4135
+## 
+##      AIC     AICc      BIC 
+## 140.4868 141.5302 144.3743 
+## 
+## Error measures:
+##                     ME     RMSE      MAE      MPE     MAPE      MASE
+## Training set 0.5018493 2.322345 1.776513 0.947593 4.301593 0.7390293
+##                     ACF1
+## Training set -0.09460844
+## 
+## Forecasts:
+##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 2017       42.27727 39.18431 45.37024 37.54700 47.00755
+## 2018       42.27727 39.11272 45.44183 37.43750 47.11704
+## 2019       42.27727 39.04271 45.51184 37.33043 47.22411
+## 2020       42.27727 38.97418 45.58036 37.22563 47.32891
+## 2021       42.27727 38.90705 45.64750 37.12296 47.43158</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: AICc: Holt</font>
+<ul>
+<li><font size="5">Our Holt model currently has an AICc of 156.3775</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">summary</span>(fit1temph)</a></code></pre></div>
+<pre><code>## 
+## Forecast method: Holt&#39;s method
+## 
+## Model Information:
+## Holt&#39;s method 
+## 
+## Call:
+##  holt(y = temps, h = 5, initial = &quot;optimal&quot;, alpha = 0.8, beta = 0.2) 
+## 
+##   Smoothing parameters:
+##     alpha = 0.8 
+##     beta  = 0.2 
+## 
+##   Initial states:
+##     l = 39.4865 
+##     b = -0.044 
+## 
+##   sigma:  3.3125
+## 
+##      AIC     AICc      BIC 
+## 155.3340 156.3775 159.2215 
+## 
+## Error measures:
+##                     ME     RMSE      MAE        MPE     MAPE      MASE
+## Training set 0.0450865 3.057281 2.386562 -0.1605611 5.819333 0.9928097
+##                    ACF1
+## Training set -0.3645378
+## 
+## Forecasts:
+##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 2017       43.14163 38.89651 47.38674 36.64928 49.63397
+## 2018       43.34111 37.33761 49.34461 34.15955 52.52267
+## 2019       43.54060 35.66708 51.41411 31.49910 55.58210
+## 2020       43.74008 33.87533 53.60484 28.65324 58.82692
+## 2021       43.93957 31.96263 55.91651 25.62242 62.25672</code></pre>
+</section><section class="slide level2">
+
+<h4 id="the-aiccs-of-our-ses-and-holt-models-are-close.-however-since-the-ses-model-clearly-has-a-lower-aicc-of-141.53-it-would-be-selected-as-the-best-fit-model-for-this-forcast.">The AICcs of our SES and Holt models are close. However, since the SES model clearly has a lower AICc of 141.53, it would be selected as the best fit model for this forcast.</h4>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: BIC: SES v Holt</font>
+<ul>
+<li><font size="5">Our SES model currently has a BIC of 144.3743</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">summary</span>(fit3temp)</a></code></pre></div>
+<pre><code>## 
+## Forecast method: Simple exponential smoothing
+## 
+## Model Information:
+## Simple exponential smoothing 
+## 
+## Call:
+##  ses(y = temps, h = 5) 
+## 
+##   Smoothing parameters:
+##     alpha = 0.2164 
+## 
+##   Initial states:
+##     l = 39.345 
+## 
+##   sigma:  2.4135
+## 
+##      AIC     AICc      BIC 
+## 140.4868 141.5302 144.3743 
+## 
+## Error measures:
+##                     ME     RMSE      MAE      MPE     MAPE      MASE
+## Training set 0.5018493 2.322345 1.776513 0.947593 4.301593 0.7390293
+##                     ACF1
+## Training set -0.09460844
+## 
+## Forecasts:
+##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 2017       42.27727 39.18431 45.37024 37.54700 47.00755
+## 2018       42.27727 39.11272 45.44183 37.43750 47.11704
+## 2019       42.27727 39.04271 45.51184 37.33043 47.22411
+## 2020       42.27727 38.97418 45.58036 37.22563 47.32891
+## 2021       42.27727 38.90705 45.64750 37.12296 47.43158</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: BIC: SES v Holt</font>
+<ul>
+<li><font size="5">Our Holt model currently has a BIC of 159.2215 </font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">summary</span>(fit1temph)</a></code></pre></div>
+<pre><code>## 
+## Forecast method: Holt&#39;s method
+## 
+## Model Information:
+## Holt&#39;s method 
+## 
+## Call:
+##  holt(y = temps, h = 5, initial = &quot;optimal&quot;, alpha = 0.8, beta = 0.2) 
+## 
+##   Smoothing parameters:
+##     alpha = 0.8 
+##     beta  = 0.2 
+## 
+##   Initial states:
+##     l = 39.4865 
+##     b = -0.044 
+## 
+##   sigma:  3.3125
+## 
+##      AIC     AICc      BIC 
+## 155.3340 156.3775 159.2215 
+## 
+## Error measures:
+##                     ME     RMSE      MAE        MPE     MAPE      MASE
+## Training set 0.0450865 3.057281 2.386562 -0.1605611 5.819333 0.9928097
+##                    ACF1
+## Training set -0.3645378
+## 
+## Forecasts:
+##      Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+## 2017       43.14163 38.89651 47.38674 36.64928 49.63397
+## 2018       43.34111 37.33761 49.34461 34.15955 52.52267
+## 2019       43.54060 35.66708 51.41411 31.49910 55.58210
+## 2020       43.74008 33.87533 53.60484 28.65324 58.82692
+## 2021       43.93957 31.96263 55.91651 25.62242 62.25672</code></pre>
+</section><section class="slide level2">
+
+<h4 id="the-bics-of-our-ses-and-holt-models-are-close.-however-since-the-ses-model-clearly-has-a-lower-bic-of-144.37-it-would-be-selected-as-the-best-fit-model-for-this-forcast.">The BICs of our SES and Holt models are close. However, since the SES model clearly has a lower BIC of 144.37, it would be selected as the best fit model for this forcast.</h4>
+</section><section id="calculate-and-compare-the-ase-from-the-ses-and-holt-models.-which-one-performs-better-with-respect-to-this-metric" class="slide level2">
+<h2>Calculate and compare the ASE from the ses() and holt() models. Which one performs better with respect to this metric?</h2>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: (M)ASE: SES</font>
+<ul>
+<li><font size="5">Our SES model currently has an (M)ASE of .9928</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">accuracy</span>(fit1temph)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE        MPE     MAPE      MASE
+## Training set 0.0450865 3.057281 2.386562 -0.1605611 5.819333 0.9928097
+##                    ACF1
+## Training set -0.3645378</code></pre>
+</section><section class="slide level2">
+
+<ul>
+<li><font size="5">Activity Four: (M)ASE: Holt</font>
+<ul>
+<li><font size="5">Our Holt model currently has an (M)ASE of .7390</font></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">accuracy</span>(fit3temp)</a></code></pre></div>
+<pre><code>##                     ME     RMSE      MAE      MPE     MAPE      MASE
+## Training set 0.5018493 2.322345 1.776513 0.947593 4.301593 0.7390293
+##                     ACF1
+## Training set -0.09460844</code></pre>
+</section><section class="slide level2">
+
+<h4 id="the-mase-of-our-ses-and-holt-models-are-very-ar-apart.-it-is-quite-clear-that-the-holt-model-is-showing-as-the-preferred-model-for-the-forcast-with-an-mase-of-.7390.">The (M)ASE of our SES and Holt models are very ar apart. It is quite clear that the Holt model is showing as the preferred model for the forcast with an (M)ASE of .7390.</h4>
+</section></section>
+<section><section id="bonus-the-wands-chooses-the-wizard" class="title-slide slide level1"><h1>Bonus: The Wands Chooses the Wizard</h1></section><section id="utilize-the-dygraphs-library.-read-in-both-unit12timeseries_ollivander-and-_gregorovitch.csv-as-two-different-data-frames.-they-do-not-have-headers-so-make-sure-you-account-for-that.-this-is-a-time-series-of-wands-sold-over-years." class="slide level2">
+<h2>Utilize the dygraphs library. Read in both Unit12TimeSeries_Ollivander and _Gregorovitch.csv as two different data frames. They do not have headers, so make sure you account for that. This is a time series of Wands sold over years.</h2>
+</section><section id="you-dont-have-your-information-in-the-proper-format-in-both-data-sets-youll-need-to-first-convert-the-date-like-variable-to-an-actual-date-class." class="slide level2">
+<h2>You don’t have your information in the proper format! In both data sets, you’ll need to first convert the date-like variable to an actual Date class.</h2>
+</section><section id="use-the-library-xts-and-the-xts-function-in-it-to-make-each-data-frame-an-xts-object-effectively-a-time-series.-youll-want-to-order.by-the-date-variable." class="slide level2">
+<h2>Use the library xts (and the xts() function in it) to make each data frame an xts object (effectively, a time series). You’ll want to order.by the Date variable.</h2>
+</section><section id="bind-the-two-xts-objects-together-and-create-a-dygraph-from-it.-utilize-the-help-index-if-youre-stuck." class="slide level2">
+<h2>Bind the two xts objects together and create a dygraph from it. Utilize the help() index if you’re stuck.</h2>
+<h3 id="give-an-effective-title-and-xy-axes.">Give an effective title and x/y axes.</h3>
+<h3 id="label-each-series-via-dyseries-to-be-the-appropriate-wand-maker.-so-one-line-should-create-a-label-for-ollivander-and-the-other-for-gregorovitch.">Label each Series (via dySeries) to be the appropriate wand-maker. So, one line should create a label for Ollivander and the other for Gregorovitch.</h3>
+<h3 id="stack-this-graph-and-modify-the-two-lines-to-be-different-colors-and-not-the-default-ones-any-colors-are-fine-but-make-sure-theyre-visible-and-that-ollivander-is-a-different-color-than-gregorovitch.">Stack this graph and modify the two lines to be different colors (and not the default ones!) Any colors are fine, but make sure they’re visible and that Ollivander is a different color than Gregorovitch.</h3>
+<h3 id="activate-a-range-selector-and-make-it-big-enough-to-view.">Activate a range selector and make it big enough to view.</h3>
+<h3 id="use-dyshading-to-illuminate-approximately-when-voldemort-was-revived-and-at-large-between-1995-to-1999.">Use dyShading to illuminate approximately when Voldemort was revived and at-large: between 1995 to 1999.</h3>
+<h3 id="enable-highlighting-on-the-graph-so-mousing-over-a-line-bolds-it.">Enable Highlighting on the graph, so mousing over a line bolds it.</h3>
+</section></section>
+    </div>
+  </div>
+
+  <script src="site_libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="site_libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        chalkboard: {
+          toggleNotesButton: false,
+          theme: 'whiteboard',
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'site_libs/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

@@ -6,7 +6,7 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Tab 2"
-      href: index.html
+    - text: "Unit 11"
+      href: Unit11.html
     - text: "Unit 12"
       href: Unit12.html
