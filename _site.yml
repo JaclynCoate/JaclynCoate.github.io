@@ -7,7 +7,7 @@ navbar:
     - text: "About"
       href: about.html
     - text: "Case Study 1"
-      href: CaseCtudy1.html
+      href: CaseStudy1.html
     - text: "Unit 11"
       href: Unit11.html
     - text: "Unit 12"
