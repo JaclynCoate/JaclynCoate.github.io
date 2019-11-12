@@ -3,6 +3,7 @@ title: "Unit 12 Website"
 author: "Jaclyn Ann Coate"
 date: "11/12/2019"
 output: html_document
+permalink: /index.html
 ---
 
 # The simiple yet awesome website about me and my work
