@@ -51,14 +51,14 @@ body {font-family: Arial;}
 <p>Click on the buttons inside the tabbed menu:</p>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'About Me')">About Me</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div id="About Me" class="tabcontent">
+  <h3>About Me</h3>
+  <p>About Me Information.</p>
 </div>
 
 <div id="Paris" class="tabcontent">
