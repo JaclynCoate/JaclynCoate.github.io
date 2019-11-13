@@ -14,7 +14,7 @@ navbar:
       href: Unit11.html
     - text: "Unit 12"
       href: Unit12.html
-    - text: "Old Faithful Shiny App"
+    - text: "Shiny Old Faithrful"
       href: OldFaithfulApp.html
-    - text: "Beer Shiny App"
+    - text: "Shiny Beer"
       href: BeerApp.html
